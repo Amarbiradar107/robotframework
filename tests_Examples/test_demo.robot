@@ -4,6 +4,7 @@ Library    SeleniumLibrary
 Test Setup    open browser
 Test Teardown    Close Browser
 Resource    resource.robot
+Test Template    Negative username test
 
 
 *** Variables ***
@@ -16,7 +17,12 @@ ${username_error_message}=    xpath=//div[@id='error']
 
 
 
-*** Test Cases ***
+*** Test Cases ***    username    password
+invalid details         student123     Password123
+invalid username      abcd        Password123
+invalid passowrd      student     12123123
+
+*** Keywords ***
 validate login successful
     Enter user_name and password details and submit    ${user_name}    ${password}
     Verify new page URL contains practicetestautomation.com/logged-in-successfully/
@@ -24,7 +30,8 @@ validate login successful
     Verify button Log out is displayed on the new page
 
 Negative username test
-    Enter user_name and password details and submit    ${incorrect_username}    ${password}
+    [Arguments]    ${user_name}    ${password}
+    Enter user_name and password details and submit    ${user_name}    ${password}
     Verify error message is displayed
     Verify error message text is Your username is invalid!
 

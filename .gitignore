@@ -1,2 +1,6 @@
 .idea
+tests_Examples/course_filter_tests.robot
+log.html
+output.xml
+report.html
 

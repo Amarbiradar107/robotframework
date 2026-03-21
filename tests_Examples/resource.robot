@@ -15,6 +15,8 @@ ${incorrect_password}=     incorrectPassword
 open browser
     Create Webdriver    Chrome
     Go To         ${url}
+    Maximize Browser Window
 open table browser
     Create Webdriver    Chrome
+    Maximize Browser Window
     Go To         ${url_2}
