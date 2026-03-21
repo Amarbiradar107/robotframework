@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.9 on win32)" generated="2026-03-21T14:56:24.034594" rpa="false" schemaversion="5">
+<suite id="s1" name="RobotFramework" source="F:\Python\RobotFramework">
+<suite id="s1-s1" name="tests Examples" source="F:\Python\RobotFramework\tests_Examples">
+<suite id="s1-s1-s1" name="Test Demo" source="F:\Python\RobotFramework\tests_Examples\test_demo.robot">
+<test id="s1-s1-s1-t1" name="validate login successful" line="18">
+<kw name="open browser" owner="resource" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2026-03-21T14:56:24.194221" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2026-03-21T14:56:24.187516" elapsed="0.712426"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-03-21T14:56:24.901786" level="INFO">Opening url 'https://practicetestautomation.com/practice-test-login/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-03-21T14:56:24.900728" elapsed="1.749143"/>
+</kw>
+<status status="PASS" start="2026-03-21T14:56:24.187028" elapsed="2.463207"/>
+</kw>
+<kw name="Enter user_name and password details and submit">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-21T14:56:26.652437" level="INFO">Typing text 'student' into text field 'Xpath=//input[@id='username']'.</msg>
+<arg>${username_field}</arg>
+<arg>${user_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-21T14:56:26.652023" elapsed="0.133381"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-03-21T14:56:26.785775" level="INFO">Typing password into text field 'Xpath=//input[@id='password']'.</msg>
+<msg time="2026-03-21T14:56:26.822390" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${password_field}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-21T14:56:26.785559" elapsed="0.090641"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-21T14:56:26.877024" level="INFO">Clicking button 'Xpath=//button[@id='submit']'.</msg>
+<arg>${submit_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-21T14:56:26.876549" elapsed="0.785722"/>
+</kw>
+<arg>${user_name}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-03-21T14:56:26.651487" elapsed="1.010886"/>
+</kw>
+<kw name="Verify new page URL contains practicetestautomation.com/logged-in-successfully/">
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-03-21T14:56:27.672145" level="INFO">Current location contains 'https://practicetestautomation.com/logged-in-successfully/'.</msg>
+<arg>https://practicetestautomation.com/logged-in-successfully/</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-03-21T14:56:27.663562" elapsed="0.008661"/>
+</kw>
+<status status="PASS" start="2026-03-21T14:56:27.663335" elapsed="0.008962"/>
+</kw>
+<kw name="Verify new page contains expected text ('Congratulations' or 'successfully logged in')">
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-03-21T14:56:27.698917" level="INFO">Element 'Xpath=//strong[contains(text(),'Congratulations student. You successfully logged i')]' contains text 'You successfully logged in!'.</msg>
+<arg>${success_message}</arg>
+<arg>You successfully logged in!</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-03-21T14:56:27.673173" elapsed="0.025862"/>
+</kw>
+<status status="PASS" start="2026-03-21T14:56:27.672973" elapsed="0.026180"/>
+</kw>
+<kw name="Verify button Log out is displayed on the new page">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-03-21T14:56:27.700423" level="INFO">Verifying element 'Xpath=//a[normalize-space()='Log out']' contains exact text 'Log ou'.</msg>
+<msg time="2026-03-21T14:56:27.812190" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-21T14:56:27.812582" level="FAIL">The text of element 'Xpath=//a[normalize-space()='Log out']' should have been 'Log ou' but it was 'Log out'.</msg>
+<arg>${logout_button}</arg>
+<arg>Log ou</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2026-03-21T14:56:27.700043" elapsed="0.116275">The text of element 'Xpath=//a[normalize-space()='Log out']' should have been 'Log ou' but it was 'Log out'.</status>
+</kw>
+<status status="FAIL" start="2026-03-21T14:56:27.699801" elapsed="0.117011">The text of element 'Xpath=//a[normalize-space()='Log out']' should have been 'Log ou' but it was 'Log out'.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-03-21T14:56:27.818210" elapsed="2.278177"/>
+</kw>
+<status status="FAIL" start="2026-03-21T14:56:24.186444" elapsed="5.911221">The text of element 'Xpath=//a[normalize-space()='Log out']' should have been 'Log ou' but it was 'Log out'.</status>
+</test>
+<doc>validate log in feature</doc>
+<status status="FAIL" start="2026-03-21T14:56:24.064592" elapsed="6.037504"/>
+</suite>
+<status status="FAIL" start="2026-03-21T14:56:24.062975" elapsed="6.044592"/>
+</suite>
+<status status="FAIL" start="2026-03-21T14:56:24.035688" elapsed="6.076716"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="RobotFramework" id="s1" pass="0" fail="1" skip="0">RobotFramework</stat>
+<stat name="tests Examples" id="s1-s1" pass="0" fail="1" skip="0">RobotFramework.tests Examples</stat>
+<stat name="Test Demo" id="s1-s1-s1" pass="0" fail="1" skip="0">RobotFramework.tests Examples.Test Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
