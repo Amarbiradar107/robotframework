@@ -12,6 +12,8 @@ ${password_field}=    Xpath=//input[@id='password']
 ${submit_button}=     Xpath=//button[@id='submit']
 ${success_message}=   Xpath=//strong[contains(text(),'Congratulations student. You successfully logged i')]
 ${logout_button}=     Xpath=//a[normalize-space()='Log out']
+${username_error_message}=    xpath=//div[@id='error']
+
 
 
 *** Test Cases ***
@@ -21,7 +23,10 @@ validate login successful
     Verify new page contains expected text ('Congratulations' or 'successfully logged in')
     Verify button Log out is displayed on the new page
 
-
+Negative username test
+    Enter user_name and password details and submit    ${incorrect_username}    ${password}
+    Verify error message is displayed
+    Verify error message text is Your username is invalid!
 
 *** Keywords ***
 Enter user_name and password details and submit
@@ -38,6 +43,12 @@ Verify new page contains expected text ('Congratulations' or 'successfully logge
 
 Verify button Log out is displayed on the new page
     Element Text Should Be    ${logout_button}    Log out
+
+Verify error message is displayed
+    Element Should Be Visible    ${username_error_message}
+
+Verify error message text is Your username is invalid!
+    Element Text Should Be    ${username_error_message}    Your username is invalid!
     
 
 
