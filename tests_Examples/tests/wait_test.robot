@@ -25,6 +25,3 @@ click edit and add data
 verify data added
     ${result}=     Get Text    xpath=//div[@id='confirmation']
     Should Be Equal As Strings    ${result}    Row 2 was saved
-
-#    single line assertion
-    Element Text Should Be    ${result}     Row 2 was save

@@ -3,7 +3,7 @@ Documentation    validate log in feature
 Library    SeleniumLibrary
 Test Setup    open browser
 Test Teardown    Close Browser
-Resource    resource.robot
+Resource    ../resource/resource.robot
 Test Template    Negative username test
 
 

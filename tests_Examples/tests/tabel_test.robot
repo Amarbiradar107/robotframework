@@ -2,9 +2,9 @@
 Documentation    tabel testing
 Library    SeleniumLibrary
 Library    Collections
-Resource    resource.robot
-Resource    pages/table_page.robot
 Test Setup     open table browser
+Resource    ../resource/resource.robot
+Resource    ../pages/table_page.robot
 Test Teardown    Close Browser
 
 *** Test Cases ***
